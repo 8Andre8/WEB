@@ -9,7 +9,8 @@ User = ''
 
 @app.route('/')
 def index():
-    return render_template('base.html', title='ЛР3-динамический роутинг', text='Добро пожаловать на главную страницу',
+    return render_template('base.html', title='ЛР3-динамический роутинг',
+                           text='Добро пожаловать на главную страницу',
                            signed=logined, user=User)
 
 
@@ -41,7 +42,8 @@ def Login():
 def profile(username):
     if not logined:
         return redirect(url_for('index'))
-    return render_template('/User/profile.html', user=username, title='Приветствие авторизованного пользователя')
+    return render_template('/User/profile.html', user=username,
+                           title='Приветствие авторизованного пользователя')
 
 
 if __name__ == '__main__':
